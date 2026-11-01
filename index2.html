@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>农大猫猫统计表 v2 - 校园动物救助</title>
+  <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>🐱 农大猫猫统计表</h1>
+    <p>校园流浪猫档案 · 数据来源：猫咪信息.xlsx</p>
+    <div class="stats">
+      <div class="stat"><b id="statTotal">0</b><span>在册猫咪</span></div>
+      <div class="stat"><b id="statAdopt">0</b><span>可领养</span></div>
+      <div class="stat"><b id="statPhoto">0</b><span>档案照片</span></div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input type="search" id="searchInput" placeholder="搜索名字、性格、品种、健康…" aria-label="搜索猫咪">
+    <!-- chips 由 <span> 改为 <button>：可 Tab 聚焦、可被读屏识别 -->
+    <div class="chips" id="chips" role="group" aria-label="筛选">
+      <button class="chip active" data-filter="all" aria-pressed="true">全部</button>
+      <button class="chip" data-filter="adopt" aria-pressed="false">可领养</button>
+      <button class="chip" data-filter="photo" aria-pressed="false">有照片</button>
+      <button class="chip" data-filter="memorial" aria-pressed="false">🕯️ 怀念</button>
+    </div>
+    <div class="view-toggle" id="viewToggle" role="group" aria-label="切换视图">
+      <button data-view="grid" class="active">卡片</button>
+      <button data-view="table">表格</button>
+    </div>
+    <button class="btn-random" id="randomBtn" title="随机挑一只猫看看">🎲 随机</button>
+  </div>
+
+  <main class="grid" id="grid"></main>
+  <div class="table-wrap" id="tableWrap" style="display:none"></div>
+
+  <footer>农大猫猫救助 · 每一只都被认真记录 🐾</footer>
+
+  <script src="assets/js/cats-data.js"></script>
+  <script src="assets/js/main2.js"></script>
+</body>
+</html>
